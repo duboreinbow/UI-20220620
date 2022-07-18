@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .selected {
+        background-color: aquamarine;
+      }
+   </style>
+</head>
+<body>
+   <ul id="menu">
+      <li>불고기버거</li>
+      <li>치즈버거</li>
+      <li>치킨버거</li>
+   </ul>
+
+   <script>
+    const ul = document.querySelector('ul');
+    ul.addEventListener('click', (event) => {
+        event.target.classList.add('selected');
+    });
+   </script>
+</body>
+</html>
+
+<!-- 
+   jQuery를 이용하여 ul 요소 클릭 시 배경 색상을 변경하기 
+   위해 아래와 같은 코드를 수행하였으나 Console 창에 
+   다음과 같은 오류가 발생하며 올바르게 동작하지 않았다. 
+   [원인(10점)]에 Console 창에 발생한 오류의 원인에 대해 기술하고 
+   [조치내용(20점)]에 해당 오류를 해결하기 위해 필요한 코드를 기술하시오. (30점)
+   
+   
+   [console오류 - Uncaught ReferenceError: $ is not defined]
+   
+   <script>
+      $("#menu > li").click(function(){
+      $("#menu").css('background', 'gray');
+      });
+   </script>
+-->

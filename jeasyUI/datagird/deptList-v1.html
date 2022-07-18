@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부서관리 - DataGrid</title>
+  <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+  <script> 
+    function deptList(){
+      $('#dg-dept').datagrid({
+        url:'./dept.json',
+        method:'get',
+      });
+    }
+  </script>
+</head>
+<body>
+  <h2>Basic DataGrid</h2>
+  <p>The DataGrid is created from markup, no JavaScript code needed.</p>
+  <div style="margin:20px 0;"></div>
+  
+  <table id="dg-dept" class="easyui-datagrid" title="부서목록" style="width:700px;height:250px"
+          data-options="toolbar:'#tb-dept',singleSelect:true,collapsible:true">
+      <thead>
+          <tr>
+              <th data-options="field:'deptno',width:80">부서번호</th>
+              <th data-options="field:'dname',width:100">부서명</th>
+              <th data-options="field:'loc',width:250">지역</th>
+          </tr>
+      </thead>
+  </table>
+  <div id="tb-dept" style="padding:5px 5px;">
+    <a href="javascript:deptList();" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+  </div>
+</body>
+</html>
+
+<!-- 
+  [ 화면을 구성하는 방법 ]
+  1. TAG
+  2. Javascript
+  3. TAG + Javascript
+
+
+  JeasyUI는 jquery(자바스크립트)기반의 UI라이브러리이다.
+  jquery.min.js를 임포트한 deptList
+  jquery.min.js - 줄바꿈없이 띄어쓰기 없이 최소한으로 크기를 줄인 버전
+
+    document.getElementByld("d_test"); - 시점의 문제 발생 , 선언이 먼저다. 
+    <div id="d_test"></div>
+
+    1. 다운로드
+    2. DOM Tree - DOM 구조 파악 완성
+    2. Javascript 
+
+    <head>
+      <script type="text/javascript" src="../js/XXX/js" /> 25MB 일경우 - 다운받는데 시간이 걸림
+    </head>
+    <body>
+    </body>
+    -> 화면은 10분동안 아무것도 표시되지 않는다..? 
+    -> 회의소집 
+    => 자바스크립트가 다운로드되는 시간최소화 하기 위해 min 파일 사용한다.
+
+
+    함수선언은 통상 head 태그 안에, script로 감싼다.
+ -->

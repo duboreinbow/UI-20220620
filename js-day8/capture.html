@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .outer{
+         width :500px;
+         height : 500px;
+         background-color: blanchedalmond;
+      }
+      .inner {
+         width: 50%;
+         height: 50%;
+         background-color: coral;
+         transform: translateY(50%);
+      }
+      button {
+         position: relative;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+      </style>
+</head>
+<body>
+   <div class="outer">
+      <div class="inner">
+         <button>Click Me</button>
+      </div>
+   </div>
+   <script>
+      const outer = document.querySelector(".outer");
+      const inner = document.querySelector(".inner");
+      const button = document.querySelector("button");
+      outer.addEventListener('click', function (event){
+         //넌 버블링 대상이네 그만 나가줄래
+         if(event.target != event.currentTarget){
+            return;
+         }
+      });
+      inner.addEventListener('click', (e) => {
+         console.log(`inner : ${e.currentTarget}, ${e.target}`);
+      });
+      button.addEventListener('click', (e) => {
+         console.log(`button1 : ${e.currentTarget}, ${e.target}`);
+         //event.stopPropagation();
+      });
+      button.addEventListener('click', (e) => {
+         console.log(`button2 : ${e.currentTarget}, ${e.target}`);
+      });
+   </script>
+</body>
+</html>
