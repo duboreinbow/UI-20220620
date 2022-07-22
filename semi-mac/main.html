@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+   <!-- 모바일에서 컬럼들이 하나는 꽉찬너비로, 다른 하나는 절반너비로 쌓이게 합니다 -->
+<div class="row">
+   <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+ </div>
+ 
+ <!-- 컬럼들은 모바일에서 50% 너비로 시작하고 데스크탑에서는 33.3% 너비가 됩니다 -->
+ <div class="row">
+   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+ </div>
+ 
+ <!-- 컬럼들은 모바일과 데스크탑에서 항상 50% 너비가 됩니다 -->
+ <div class="row">
+   <div class="col-xs-6">.col-xs-6</div>
+   <div class="col-xs-6">.col-xs-6</div>
+   <button type="button" class="btn btn-primary">Primary</button>
+
+ </div>
+</body>
+</html>
